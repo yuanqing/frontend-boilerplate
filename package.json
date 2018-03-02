@@ -10,13 +10,15 @@
   },
   "private": true,
   "dependencies": {
+    "modern-normalize": "^0.4.0",
+  },
+  "devDependencies": {
     "browserify": "^16.1.0",
     "concurrently": "^3.5.1",
     "csso-cli": "^1.1.0",
     "ecstatic": "^3.2.0",
     "exorcist": "^1.0.1",
     "gzip-size-cli": "^2.1.0",
-    "modern-normalize": "^0.4.0",
     "node-sass": "^4.7.2",
     "opn-cli": "^3.1.0",
     "prettier-standard": "^8.0.0",
