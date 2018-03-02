@@ -1,0 +1,44 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "0.0.0",
+  "description": "Super basic web boilerplate with Sass and vanilla JavaScript.",
+  "author": "Lim Yuan Qing",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/frontend-boilerplate.git"
+  },
+  "private": true,
+  "dependencies": {
+    "browserify": "^16.1.0",
+    "concurrently": "^3.5.1",
+    "csso-cli": "^1.1.0",
+    "ecstatic": "^3.2.0",
+    "exorcist": "^1.0.1",
+    "gzip-size-cli": "^2.1.0",
+    "modern-normalize": "^0.4.0",
+    "node-sass": "^4.7.2",
+    "opn-cli": "^3.1.0",
+    "prettier-standard": "^8.0.0",
+    "stylelint": "^9.1.1",
+    "stylelint-config-standard": "^18.2.0",
+    "uglify-js": "^3.3.12",
+    "watchify": "^3.10.0"
+  },
+  "scripts": {
+    "build": "yarn css-build && yarn js-build",
+    "clean": "rm -rf build",
+    "css-build": "mkdir -p build && node-sass index.scss --source-map true | csso --comments none --output build/index.css",
+    "css-lint": "stylelint index.scss scss/*.scss --config stylelint-config-standard --fix",
+    "css-watch": "mkdir -p build && node-sass index.scss --output build --source-map-embed true --watch",
+    "css-weight": "yarn css-build && gzip-size build/index.css",
+    "js-build": "mkdir -p build && browserify index.js | exorcist build/index.js.map | uglifyjs --compress --mangle --output build/index.js",
+    "js-lint": "prettier-standard index.js js/*.js --no-semi --single-quote --write",
+    "js-watch": "mkdir -p build && watchify index.js --debug --outfile build/index.js",
+    "js-weight": "yarn js-build && gzip-size build/index.js",
+    "lint": "yarn css-lint && yarn js-lint",
+    "serve": "opn http://0.0.0.0:9999/ && ecstatic --port 9999",
+    "start": "concurrently \"yarn js-watch\" \"yarn css-watch\" \"yarn serve\"",
+    "weight": "yarn css-weight && yarn js-weight"
+  }
+}
