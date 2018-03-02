@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "modern-normalize": "^0.4.0",
+    "modern-normalize": "^0.4.0"
   },
   "devDependencies": {
     "browserify": "^16.1.0",
