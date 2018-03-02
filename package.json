@@ -24,6 +24,7 @@
     "prettier-standard": "^8.0.0",
     "stylelint": "^9.1.1",
     "stylelint-config-standard": "^18.2.0",
+    "tape": "^4.9.0",
     "uglify-js": "^3.3.12",
     "watchify": "^3.10.0"
   },
@@ -36,11 +37,13 @@
     "css-weight": "yarn css-build && gzip-size build/index.css",
     "js-build": "mkdir -p build && browserify index.js | exorcist build/index.js.map | uglifyjs --compress --mangle --output build/index.js",
     "js-lint": "prettier-standard index.js js/*.js --no-semi --single-quote --write",
+    "js-test": "tape js/**/__tests__/*.js",
     "js-watch": "mkdir -p build && watchify index.js --debug --outfile build/index.js",
     "js-weight": "yarn js-build && gzip-size build/index.js",
     "lint": "yarn css-lint && yarn js-lint",
     "serve": "opn http://0.0.0.0:9999/ && ecstatic --port 9999",
     "start": "concurrently \"yarn js-watch\" \"yarn css-watch\" \"yarn serve\"",
+    "test": "yarn js-test",
     "weight": "yarn css-weight && yarn js-weight"
   }
 }

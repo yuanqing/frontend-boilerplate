@@ -32,6 +32,7 @@ yarn start
 - Bundler: [`browserify`](https://github.com/browserify/browserify)
 - Linter: [`prettier-standard`](https://github.com/sheerun/prettier-standard)
 - Minifier: [`uglify-js`](https://github.com/mishoo/UglifyJS2)
+- Test runner: [`tape`](https://github.com/substack/tape)
 
 ## License
 
