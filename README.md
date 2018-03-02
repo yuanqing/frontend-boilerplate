@@ -30,9 +30,9 @@ yarn start
 ### JavaScript
 
 - Bundler: [`browserify`](https://github.com/browserify/browserify)
+- Test runner: [`tape`](https://github.com/substack/tape)
 - Linter: [`prettier-standard`](https://github.com/sheerun/prettier-standard)
 - Minifier: [`uglify-js`](https://github.com/mishoo/UglifyJS2)
-- Test runner: [`tape`](https://github.com/substack/tape)
 
 ## License
 
