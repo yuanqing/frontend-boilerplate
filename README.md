@@ -31,7 +31,7 @@ yarn start
 
 - Bundler: [`browserify`](https://github.com/browserify/browserify)
 - Test runner: [`tape`](https://github.com/substack/tape)
-- Linter: [`standard`](hhttps://github.com/standard/standard) and [`prettier-standard`](https://github.com/sheerun/prettier-standard)
+- Linter: [`standard`](https://github.com/standard/standard) and [`prettier-standard`](https://github.com/sheerun/prettier-standard)
 - Minifier: [`uglify-js`](https://github.com/mishoo/UglifyJS2)
 
 ## License
