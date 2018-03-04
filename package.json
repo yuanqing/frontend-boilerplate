@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "yarn css-build && yarn js-build",
-    "clean": "rm -rf build",
+    "clean": "rm -rf build *.log",
     "css-build": "mkdir -p build && node-sass index.scss --source-map true | csso --comments none --output build/index.css",
     "css-lint": "stylelint index.scss css/*.scss --config stylelint-config-standard --fix",
     "css-watch": "mkdir -p build && node-sass index.scss --output build --source-map-embed true --watch",
