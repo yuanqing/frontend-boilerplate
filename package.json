@@ -37,6 +37,7 @@
     "css-lint": "stylelint index.scss 'css/*.scss' --config stylelint-config-standard",
     "css-watch": "mkdir -p build && node-sass index.scss --output build --source-map-embed true --watch",
     "css-weight": "yarn css-build && gzip-size build/index.css",
+    "fix": "yarn css-fix && yarn js-fix",
     "js-build": "mkdir -p build && browserify index.js | exorcist build/index.js.map | uglifyjs --compress --mangle --output build/index.js",
     "js-fix": "prettier-standard index.js 'js/*.js'",
     "js-lint": "standard index.js 'js/*.js'",
